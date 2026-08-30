@@ -5,10 +5,9 @@ if (languageToggle) {
     const current = document.documentElement.lang;
 
     if (current === "pt-BR") {
-      document.documentElement.lang = "en";
-      alert("English version will be available through the /en section.");
+      window.location.href = "en/index.html";
     } else {
-      document.documentElement.lang = "pt-BR";
+      window.location.href = "../index.html";
     }
   });
 }
