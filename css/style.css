@@ -2215,3 +2215,7 @@ summary:focus-visible {
   margin-right: 0;
 }
 
+
+/* Seletor de idioma oculto ate a sprint de i18n. Remover este bloco para reativar. */
+.language-toggle { display: none !important; }
+
