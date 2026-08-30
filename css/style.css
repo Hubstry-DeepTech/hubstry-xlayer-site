@@ -1,0 +1,2217 @@
+﻿:root {
+  --bg: #111214;
+  --bg-soft: #181a1d;
+  --panel: #1d2024;
+  --line: #34383d;
+  --text: #e6e7e8;
+  --muted: #969ba1;
+  --amber: #ffb000;
+  --amber-soft: #ffc94d;
+  --max: 1320px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, Arial, sans-serif;
+  line-height: 1.75;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 76px;
+  padding: 0 4vw;
+  background: rgba(17,18,20,.94);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(16px);
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  letter-spacing: .08em;
+}
+
+.brand-mark {
+  color: var(--amber);
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.brand strong {
+  display: block;
+  font-size: 14px;
+  letter-spacing: .16em;
+}
+
+.brand small {
+  display: block;
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: .2em;
+}
+
+nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+nav a {
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+nav a:hover {
+  color: var(--amber);
+}
+
+.language-toggle {
+  display: flex;
+  gap: 8px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  padding: 8px 11px;
+  cursor: pointer;
+}
+
+.language-toggle .active {
+  color: var(--amber);
+}
+
+.hero,
+.diagram-section,
+.prose-section,
+.evidence-section,
+.architecture-section,
+.methodology-section,
+.stakeholders-section,
+.sources-section,
+.closing-section {
+  max-width: var(--max);
+  margin: auto;
+  padding: 120px 5vw;
+}
+
+.hero {
+  min-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-kicker,
+.section-label {
+  color: var(--amber);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 1050px;
+  margin: 30px 0;
+  font-size: clamp(48px, 7vw, 96px);
+  line-height: 1.02;
+  letter-spacing: -.045em;
+  font-weight: 500;
+}
+
+.hero h1 em {
+  color: var(--amber);
+  font-style: normal;
+}
+
+.hero-lead {
+  max-width: 760px;
+  color: #b8bbc0;
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 35px;
+}
+
+.button {
+  display: inline-block;
+  padding: 13px 20px;
+  border: 1px solid var(--line);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.button.primary {
+  background: var(--amber);
+  color: #111214;
+  border-color: var(--amber);
+}
+
+.button.secondary:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+}
+
+.hero-note {
+  margin-top: 70px;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: .14em;
+}
+
+.signal {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background: var(--amber);
+  box-shadow: 0 0 15px var(--amber);
+}
+
+.diagram-section {
+  border-top: 1px solid var(--line);
+}
+
+.diagram-intro {
+  max-width: 800px;
+  margin: 40px 0 80px;
+}
+
+h2 {
+  margin: 0 0 28px;
+  font-size: clamp(34px, 4vw, 58px);
+  line-height: 1.08;
+  letter-spacing: -.035em;
+  font-weight: 500;
+}
+
+p {
+  color: #b0b4b9;
+  font-size: 17px;
+}
+
+.energy-graph {
+  display: grid;
+  grid-template-columns: 1fr 90px 1fr 90px 1fr;
+  align-items: center;
+  gap: 0;
+}
+
+.graph-node,
+.fork-node {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  padding: 26px;
+}
+
+.graph-node {
+  min-height: 150px;
+}
+
+.node-index,
+.fork-node span {
+  display: block;
+  color: var(--amber);
+  font-size: 10px;
+  letter-spacing: .15em;
+  margin-bottom: 25px;
+}
+
+.graph-node strong,
+.fork-node strong {
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.graph-node small,
+.fork-node small {
+  color: var(--muted);
+}
+
+.graph-line {
+  height: 1px;
+  background: var(--line);
+}
+
+.graph-line span {
+  display: block;
+  width: 8px;
+  height: 8px;
+  margin-left: auto;
+  background: var(--amber);
+  border-radius: 50%;
+}
+
+.graph-line.restricted {
+  background: var(--amber);
+}
+
+.graph-fork {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 35px;
+}
+
+.prose-section {
+  background: var(--bg-soft);
+  max-width: none;
+}
+
+.prose-grid,
+.methodology-grid,
+.evidence-header {
+  max-width: var(--max);
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+.prose p,
+.methodology-grid p {
+  max-width: 680px;
+}
+
+.evidence-section {
+  border-bottom: 1px solid var(--line);
+}
+
+.evidence-source {
+  align-self: end;
+  border-left: 2px solid var(--amber);
+  padding-left: 20px;
+}
+
+.evidence-source span,
+.evidence-source small {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: .1em;
+}
+
+.evidence-source strong {
+  display: block;
+  color: var(--amber);
+  font-size: 32px;
+  margin: 5px 0;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 70px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.metric {
+  padding: 35px 25px;
+  border-right: 1px solid var(--line);
+}
+
+.metric:last-child {
+  border-right: 0;
+}
+
+.metric strong {
+  display: block;
+  color: var(--amber);
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: -.04em;
+}
+
+.metric span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.method-note {
+  margin-top: 30px;
+  color: #777d84;
+  font-size: 13px;
+}
+
+.architecture-section {
+  background: #0d0e10;
+  max-width: none;
+}
+
+.architecture-section > h2,
+.architecture-lead,
+.layer-stack {
+  max-width: var(--max);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.architecture-lead {
+  max-width: var(--max);
+  color: var(--muted);
+}
+
+.layer-stack {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin-top: 70px;
+}
+
+.layer-stack article {
+  min-height: 300px;
+  padding: 30px;
+  border: 1px solid var(--line);
+  margin-left: -1px;
+}
+
+.layer-stack article > span {
+  color: var(--amber);
+  font-size: 11px;
+}
+
+.layer-stack h3 {
+  margin-top: 70px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.layer-stack p {
+  font-size: 14px;
+}
+
+.layer-stack .human-layer {
+  border-color: var(--amber);
+}
+
+.stakeholders-section {
+  border-top: 1px solid var(--line);
+}
+
+.stakeholder-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--line);
+}
+
+.stakeholder-grid article {
+  background: var(--bg);
+  padding: 35px;
+  min-height: 310px;
+}
+
+.stakeholder-grid span {
+  color: var(--amber);
+  font-size: 10px;
+  letter-spacing: .15em;
+}
+
+.stakeholder-grid h3 {
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.stakeholder-grid p {
+  font-size: 14px;
+}
+
+.sources-section {
+  background: var(--bg-soft);
+  max-width: none;
+}
+
+.source-list {
+  max-width: var(--max);
+  margin: 50px auto;
+  border-top: 1px solid var(--line);
+}
+
+.source-list div {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 30px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.source-list strong {
+  color: var(--amber);
+}
+
+.source-list span {
+  color: var(--muted);
+}
+
+.closing-section {
+  text-align: center;
+}
+
+.closing-mark {
+  color: var(--amber);
+  font-size: 100px;
+  font-weight: 800;
+}
+
+.closing-section p {
+  max-width: 600px;
+  margin: 0 auto 35px;
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 50px 5vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.footer-brand strong,
+.footer-brand span {
+  display: block;
+}
+
+.footer-brand span,
+.footer-copy {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.footer-links a {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.footer-links a:hover {
+  color: var(--amber);
+}
+
+.footer-copy {
+  text-align: right;
+}
+
+@media (max-width: 1000px) {
+
+  nav {
+    display: none;
+  }
+
+  .energy-graph {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .graph-line {
+    width: 1px;
+    height: 40px;
+    margin: auto;
+  }
+
+  .graph-line span {
+    margin: auto;
+  }
+
+  .graph-fork {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .prose-grid,
+  .methodology-grid,
+  .evidence-header {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .metrics {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .layer-stack {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stakeholder-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  footer {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-links,
+  .footer-copy {
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .hero,
+  .diagram-section,
+  .prose-section,
+  .evidence-section,
+  .architecture-section,
+  .methodology-section,
+  .stakeholders-section,
+  .sources-section,
+  .closing-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .hero h1 {
+    font-size: 46px;
+  }
+
+  .hero-lead {
+    font-size: 17px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .graph-fork,
+  .metrics,
+  .layer-stack,
+  .stakeholder-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metric {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .source-list div {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+}
+
+/* INTERNAL PAGE LAYOUT */
+.page-main {
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+.page-section {
+  width: 100%;
+  padding-top: 110px;
+  padding-bottom: 110px;
+}
+
+.page-prose {
+  max-width: 820px;
+}
+
+.page-prose p {
+  max-width: 760px;
+}
+
+.page-section .section-label {
+  margin-bottom: 32px;
+}
+
+.page-section h1 {
+  max-width: 1050px;
+  margin-top: 0;
+}
+
+.page-section h2 {
+  max-width: 900px;
+}
+
+@media (max-width: 600px) {
+  .page-main {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+
+  .page-section {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+}
+
+/* =========================================================
+   X-LAYER — EDITORIAL PAGE MARGINS
+   ========================================================= */
+
+main {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+main > section {
+  box-sizing: border-box;
+  width: min(1180px, calc(100% - 120px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main > .hero {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+main > .statement,
+main > .case-preview,
+main > .signal-grid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+main p {
+  max-width: 780px;
+}
+
+main h1 {
+  max-width: 1050px;
+}
+
+main h2 {
+  max-width: 900px;
+}
+
+/* Long-form editorial reading */
+.statement {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.statement p + p {
+  margin-top: 1.5rem;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+  main > section {
+    width: calc(100% - 48px);
+  }
+}
+
+@media (max-width: 520px) {
+  main > section {
+    width: calc(100% - 32px);
+  }
+}
+
+/* =========================================================
+   X-LAYER EDITORIAL SYSTEM
+   Long-form research interface
+   ========================================================= */
+
+:root {
+  --editorial-width: 1180px;
+  --reading-width: 790px;
+  --amber-neon: #f5b800;
+  --amber-soft: #c99716;
+  --ink: #171717;
+  --ink-soft: #4b4b4b;
+  --paper: #eeeeeb;
+  --panel: #e4e4df;
+  --line: #c7c7c0;
+}
+
+/* PAGE */
+
+.editorial-page {
+  width: min(var(--editorial-width), calc(100% - 120px));
+  margin: 0 auto;
+}
+
+.editorial-hero {
+  padding: 130px 0 120px;
+  border-bottom: 1px solid var(--line);
+}
+
+.editorial-hero h1 {
+  max-width: 1000px;
+  margin: 24px 0 38px;
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+  font-weight: 600;
+}
+
+.hero-lead {
+  max-width: 820px;
+  font-size: 21px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+.editorial-deck {
+  margin-top: 50px;
+  font-size: 12px;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.editorial-deck span {
+  color: var(--amber-soft);
+}
+
+/* ESSAY */
+
+.essay-section {
+  padding: 115px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.essay-index {
+  margin-bottom: 30px;
+  font-size: 11px;
+  letter-spacing: .18em;
+  font-weight: 700;
+  color: var(--amber-soft);
+}
+
+.essay-section h2,
+.stakeholder-section h2,
+.sources-section h2 {
+  max-width: 900px;
+  margin: 0 0 55px;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  font-weight: 500;
+}
+
+.prose {
+  max-width: var(--reading-width);
+}
+
+.prose p,
+.stakeholder-prose p,
+.accordion-content p {
+  font-size: 18px;
+  line-height: 1.85;
+  color: var(--ink-soft);
+  margin: 0 0 28px;
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+.prose strong {
+  color: var(--ink);
+  font-weight: 650;
+}
+
+/* DIAGRAMS */
+
+.diagram,
+.graph-panel,
+.state-diagram,
+.architecture-flow,
+.use-graph {
+  margin: 70px 0;
+}
+
+.diagram-flow {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 38px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  overflow-x: auto;
+}
+
+.node {
+  min-width: 145px;
+  padding: 20px;
+  border: 1px solid #aaa;
+  background: #f2f2ee;
+}
+
+.node.accent {
+  border-color: var(--amber-neon);
+  box-shadow: inset 4px 0 0 var(--amber-neon);
+}
+
+.node span {
+  display: block;
+  font-size: 10px;
+  color: var(--amber-soft);
+  margin-bottom: 10px;
+}
+
+.node strong {
+  display: block;
+  font-size: 15px;
+}
+
+.node small {
+  display: block;
+  margin-top: 8px;
+  color: var(--ink-soft);
+}
+
+.connector {
+  font-size: 24px;
+  color: var(--amber-soft);
+}
+
+/* TIMELINE */
+
+.graph-panel {
+  padding: 40px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+
+.graph-title {
+  font-size: 10px;
+  letter-spacing: .16em;
+  margin-bottom: 45px;
+}
+
+.timeline {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.time-label {
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.time-block {
+  height: 18px;
+  flex: 1;
+  min-width: 70px;
+  background: var(--amber-neon);
+  opacity: .8;
+}
+
+.timeline-caption {
+  margin-top: 28px;
+  max-width: 680px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+/* EVIDENCE */
+
+.evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  margin-top: 70px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.evidence-source {
+  padding: 32px;
+  background: var(--paper);
+}
+
+.evidence-source span {
+  font-size: 10px;
+  letter-spacing: .15em;
+  color: var(--amber-soft);
+}
+
+.evidence-source strong {
+  display: block;
+  margin: 18px 0;
+  font-size: 21px;
+}
+
+/* NETWORK GRAPH */
+
+.network-graph {
+  position: relative;
+  min-height: 460px;
+  margin: 80px 0;
+  padding: 50px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+
+.graph-node {
+  position: absolute;
+  width: 170px;
+  padding: 22px;
+  background: #f2f2ee;
+  border: 1px solid #999;
+}
+
+.graph-node span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--amber-soft);
+  font-weight: 700;
+}
+
+.graph-node strong {
+  display: block;
+}
+
+.graph-node small {
+  display: block;
+  margin-top: 8px;
+  color: var(--ink-soft);
+}
+
+.source-node {
+  left: 7%;
+  top: 180px;
+}
+
+.hub-node {
+  left: 42%;
+  top: 180px;
+  border-color: var(--amber-neon);
+  box-shadow: 0 0 0 1px var(--amber-neon);
+}
+
+.destination-node {
+  right: 7%;
+}
+
+.d1 { top: 70px; }
+.d2 { top: 185px; }
+.d3 { top: 300px; }
+
+.graph-edge {
+  position: absolute;
+  left: 22%;
+  width: 20%;
+  top: 220px;
+  border-top: 1px solid var(--amber-soft);
+  text-align: center;
+}
+
+.graph-edge span {
+  position: relative;
+  top: -22px;
+  padding: 0 8px;
+  background: var(--panel);
+  font-size: 10px;
+  letter-spacing: .1em;
+}
+
+.edge-two {
+  left: 57%;
+  width: 15%;
+}
+
+.edge-two span {
+  color: var(--amber-soft);
+}
+
+/* STATE */
+
+.state-diagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 45px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+
+.state {
+  width: 210px;
+  padding: 25px;
+  background: #f2f2ee;
+  border: 1px solid #aaa;
+}
+
+.state span {
+  color: var(--amber-soft);
+  font-size: 11px;
+}
+
+.state strong {
+  display: block;
+  margin: 15px 0 8px;
+}
+
+.state small {
+  color: var(--ink-soft);
+}
+
+.state-arrow {
+  font-size: 26px;
+  color: var(--amber-soft);
+}
+
+/* ARCHITECTURE */
+
+.architecture-flow {
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.architecture-node {
+  padding: 25px 30px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+
+.architecture-node span {
+  color: var(--amber-soft);
+  font-size: 11px;
+}
+
+.architecture-node strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 18px;
+}
+
+.architecture-node small {
+  display: block;
+  margin-top: 7px;
+  color: var(--ink-soft);
+}
+
+.architecture-arrow {
+  text-align: center;
+  padding: 12px;
+  color: var(--amber-soft);
+}
+
+.human-node {
+  border-color: var(--amber-neon);
+}
+
+/* USE GRAPH */
+
+.use-graph {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 45px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+
+.use-source {
+  min-width: 230px;
+  padding: 25px;
+  border: 1px solid var(--amber-neon);
+}
+
+.use-source span {
+  display: block;
+  font-size: 10px;
+  color: var(--amber-soft);
+}
+
+.use-source strong {
+  display: block;
+  margin-top: 12px;
+}
+
+.use-branches {
+  display: grid;
+  gap: 14px;
+  flex: 1;
+}
+
+.use-branches > div {
+  padding: 18px 20px;
+  background: #f2f2ee;
+  border: 1px solid #aaa;
+}
+
+.use-branches span {
+  color: var(--amber-soft);
+  margin-right: 12px;
+}
+
+.use-branches strong {
+  margin-right: 12px;
+}
+
+.use-branches small {
+  color: var(--ink-soft);
+}
+
+/* ACCORDIONS */
+
+.editorial-accordion {
+  margin-top: 45px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.editorial-accordion summary {
+  padding: 24px 0;
+  cursor: pointer;
+  list-style: none;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.editorial-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.editorial-accordion summary::after {
+  content: '+';
+  float: right;
+  color: var(--amber-soft);
+  font-size: 20px;
+}
+
+.editorial-accordion[open] summary::after {
+  content: '−';
+}
+
+.accordion-content {
+  max-width: 760px;
+  padding: 5px 0 30px;
+}
+
+/* COUNTERFACTUAL */
+
+.counterfactual-box {
+  max-width: 850px;
+  margin: 70px 0;
+  padding: 42px;
+  border-left: 4px solid var(--amber-neon);
+  background: var(--panel);
+}
+
+.cf-label {
+  font-size: 10px;
+  letter-spacing: .17em;
+  color: var(--amber-soft);
+  margin-bottom: 22px;
+}
+
+.counterfactual-box p {
+  font-size: 21px;
+  line-height: 1.65;
+  margin: 0 0 20px;
+}
+
+.counterfactual-box small {
+  color: var(--ink-soft);
+}
+
+/* GOVERNANCE */
+
+.governance-section {
+  background: rgba(0,0,0,.025);
+}
+
+/* STAKEHOLDERS */
+
+.stakeholder-section {
+  padding: 120px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.stakeholder-prose {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 65px 80px;
+}
+
+.stakeholder-prose article {
+  max-width: 530px;
+}
+
+.stakeholder-prose h3 {
+  margin-bottom: 18px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.stakeholder-prose p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* CONCLUSION */
+
+.closing-statement {
+  margin-top: 65px !important;
+  padding-top: 35px;
+  border-top: 1px solid var(--line);
+  font-size: 24px !important;
+  line-height: 1.55 !important;
+  color: var(--ink) !important;
+}
+
+/* SOURCES */
+
+.sources-section {
+  padding: 115px 0 140px;
+}
+
+.source-note {
+  margin-top: 55px;
+  padding: 25px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+  .editorial-page {
+    width: calc(100% - 48px);
+  }
+
+  .editorial-hero {
+    padding-top: 90px;
+  }
+
+  .editorial-hero h1 {
+    font-size: 43px;
+  }
+
+  .essay-section,
+  .stakeholder-section,
+  .sources-section {
+    padding: 80px 0;
+  }
+
+  .diagram-flow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .connector {
+    text-align: center;
+  }
+
+  .evidence-grid,
+  .stakeholder-prose {
+    grid-template-columns: 1fr;
+  }
+
+  .network-graph {
+    min-height: 700px;
+  }
+
+  .source-node {
+    left: 5%;
+    top: 70px;
+  }
+
+  .hub-node {
+    left: 35%;
+    top: 300px;
+  }
+
+  .destination-node {
+    right: 5%;
+  }
+
+  .d1 { top: 500px; }
+  .d2 { top: 575px; }
+  .d3 { top: 650px; }
+
+  .graph-edge {
+    display: none;
+  }
+
+  .state-diagram,
+  .use-graph {
+    flex-direction: column;
+  }
+
+}
+
+@media (max-width: 520px) {
+
+  .editorial-page {
+    width: calc(100% - 32px);
+  }
+
+  .editorial-hero h1 {
+    font-size: 37px;
+  }
+
+  .hero-lead {
+    font-size: 18px;
+  }
+
+  .prose p,
+  .stakeholder-prose p,
+  .accordion-content p {
+    font-size: 17px;
+  }
+
+}
+
+
+/* =========================================================
+   X-LAYER GLOBAL READABILITY SYSTEM
+   WCAG-oriented editorial layer
+   ========================================================= */
+
+:root {
+  /* Neutral palette */
+  --xl-bg: #111111;
+  --xl-bg-elevated: #1a1a1a;
+  --xl-bg-card: #202020;
+
+  /* Text — deliberately high contrast */
+  --xl-text: #f2f2f0;
+  --xl-text-strong: #ffffff;
+  --xl-text-secondary: #d6d6d1;
+  --xl-text-muted: #b8b8b2;
+
+  /* Borders */
+  --xl-border: #575757;
+  --xl-border-strong: #707070;
+
+  /* Brand accent */
+  --xl-amber: #ffbf00;
+  --xl-amber-bright: #ffc928;
+  --xl-amber-dark: #c99100;
+
+  /* Layout */
+  --xl-page-gutter: clamp(24px, 6vw, 96px);
+  --xl-card-padding: clamp(24px, 3vw, 42px);
+}
+
+/* =========================================================
+   GLOBAL CANVAS
+   ========================================================= */
+
+html {
+  background: var(--xl-bg);
+}
+
+body {
+  background: var(--xl-bg);
+  color: var(--xl-text);
+}
+
+/* =========================================================
+   GLOBAL TEXT CONTRAST
+   ========================================================= */
+
+p,
+li,
+dd,
+dt,
+small,
+span {
+  color: var(--xl-text-secondary);
+}
+
+strong,
+b {
+  color: var(--xl-text-strong);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--xl-text-strong);
+}
+
+a {
+  color: var(--xl-amber-bright);
+}
+
+a:hover,
+a:focus {
+  color: #ffffff;
+}
+
+.hero-lead,
+.prose p,
+.stakeholder-prose p,
+.accordion-content p,
+.timeline-caption,
+.source-note {
+  color: var(--xl-text-secondary);
+}
+
+/* =========================================================
+   EDITORIAL PAGE — SAFE HORIZONTAL MARGINS
+   ========================================================= */
+
+main.editorial-page {
+  width: min(1180px, calc(100% - (var(--xl-page-gutter) * 2)));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.editorial-page > section {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   CARDS — READABLE SURFACE
+   ========================================================= */
+
+.signal-card,
+.evidence-source,
+.node,
+.graph-node,
+.state,
+.architecture-node,
+.use-branches > div,
+.counterfactual-box,
+.graph-panel,
+.network-graph,
+.state-diagram,
+.use-graph,
+.diagram-flow {
+  background: var(--xl-bg-card);
+  color: var(--xl-text);
+  border-color: var(--xl-border);
+}
+
+/* Every card gets genuine internal breathing room */
+
+.signal-card,
+.evidence-source,
+.node,
+.graph-node,
+.state,
+.architecture-node,
+.use-branches > div {
+  padding: var(--xl-card-padding);
+}
+
+/* Prevent inherited typography from touching card edges */
+
+.signal-card p,
+.evidence-source p,
+.node small,
+.graph-node small,
+.state small,
+.architecture-node small,
+.use-branches small {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+  color: var(--xl-text-secondary);
+}
+
+/* Card headings */
+
+.signal-card h2,
+.evidence-source strong,
+.node strong,
+.graph-node strong,
+.state strong,
+.architecture-node strong,
+.use-branches strong {
+  color: var(--xl-text-strong);
+}
+
+/* =========================================================
+   AMBER = ACCENT ONLY
+   ========================================================= */
+
+.essay-index,
+.hero-kicker,
+.section-label,
+.cf-label,
+.graph-title,
+.evidence-source span,
+.node span,
+.graph-node span,
+.state span,
+.use-source span {
+  color: var(--xl-amber-bright);
+}
+
+/* Do NOT use amber as body text */
+
+.prose,
+.prose p,
+.accordion-content,
+.accordion-content p,
+.stakeholder-prose p {
+  color: var(--xl-text-secondary);
+}
+
+/* =========================================================
+   ACCORDIONS
+   ========================================================= */
+
+.editorial-accordion {
+  border-top-color: var(--xl-border);
+  border-bottom-color: var(--xl-border);
+}
+
+.editorial-accordion summary {
+  color: var(--xl-text-strong);
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.editorial-accordion summary::after {
+  color: var(--xl-amber-bright);
+}
+
+.accordion-content {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+/* =========================================================
+   DIAGRAM SYSTEM
+   ========================================================= */
+
+/*
+   Never allow diagram children to overlap because of
+   absolute positioning unless the relationship explicitly
+   requires it.
+*/
+
+.diagram-flow {
+  display: grid;
+  grid-template-columns:
+    minmax(140px, 1fr)
+    auto
+    minmax(140px, 1fr)
+    auto
+    minmax(140px, 1fr)
+    auto
+    minmax(140px, 1fr);
+
+  align-items: stretch;
+  gap: 18px;
+
+  padding: 32px;
+  overflow-x: auto;
+}
+
+.diagram-flow .node {
+  position: relative;
+  min-width: 0;
+  width: auto;
+  box-sizing: border-box;
+}
+
+.diagram-flow .connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--xl-amber-bright);
+}
+
+/* =========================================================
+   NETWORK GRAPH
+   ========================================================= */
+
+/*
+   Keep graph geometry inside its own coordinate system.
+   Nodes cannot escape their parent.
+*/
+
+.network-graph {
+  position: relative;
+  overflow: hidden;
+  min-height: 500px;
+}
+
+/* =========================================================
+   TEXT WIDTH / READABILITY
+   ========================================================= */
+
+.prose {
+  max-width: 760px;
+}
+
+.prose p,
+.stakeholder-prose p,
+.accordion-content p {
+  max-width: 760px;
+}
+
+/* =========================================================
+   BODY FONT SIZE
+   ========================================================= */
+
+.prose p,
+.stakeholder-prose p,
+.accordion-content p {
+  font-size: 18px;
+  line-height: 1.82;
+}
+
+/* =========================================================
+   FOCUS
+   ========================================================= */
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--xl-amber-bright);
+  outline-offset: 4px;
+}
+
+/* =========================================================
+   HOME — GLOBAL CARD MARGINS
+   ========================================================= */
+
+/*
+   This catches the existing home cards without requiring
+   individual page-by-page fixes.
+*/
+
+.card,
+.signal-card,
+.feature-card,
+.home-card,
+.metric-card {
+  box-sizing: border-box;
+}
+
+.card p,
+.signal-card p,
+.feature-card p,
+.home-card p,
+.metric-card p {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* =========================================================
+   HOME — DIAGRAM SAFETY
+   ========================================================= */
+
+.diagram,
+.diagram-grid,
+.diagram-flow,
+.architecture-flow {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.diagram > *,
+.diagram-grid > *,
+.diagram-flow > *,
+.architecture-flow > * {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  main.editorial-page {
+    width: calc(100% - 40px);
+  }
+
+  .diagram-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .diagram-flow .connector {
+    min-height: 25px;
+  }
+
+  .network-graph {
+    min-height: 720px;
+  }
+
+}
+
+@media (max-width: 520px) {
+
+  main.editorial-page {
+    width: calc(100% - 32px);
+  }
+
+  .prose p,
+  .stakeholder-prose p,
+  .accordion-content p {
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .signal-card,
+  .evidence-source,
+  .node,
+  .graph-node,
+  .state,
+  .architecture-node,
+  .use-branches > div {
+    padding: 24px;
+  }
+
+}
+
+/* =========================================================
+   CONTRAST POLICY
+   ========================================================= */
+
+/*
+   Editorial rule:
+   body text is never rendered in low-contrast gray.
+   Amber is an accent, not a paragraph color.
+   Cards use an elevated dark surface with light text.
+*/
+
+
+/* =========================================================
+   X-LAYER — ENERGY GRAPH v2
+   Estrutura sem sobreposição
+   ========================================================= */
+
+.energy-graph {
+  width: 100%;
+  max-width: 1180px;
+  margin: 56px auto 0;
+  padding: 42px;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-rows: auto auto;
+  align-items: center;
+
+  gap: 28px;
+
+  background: #171717;
+  border: 1px solid #4f4f4f;
+  border-radius: 4px;
+
+  overflow: hidden;
+}
+
+/* ---------------------------------------------------------
+   Nós principais
+   --------------------------------------------------------- */
+
+.energy-graph > .graph-node {
+  position: relative;
+  z-index: 2;
+
+  min-width: 0;
+  width: 100%;
+  min-height: 150px;
+
+  box-sizing: border-box;
+
+  padding: 28px 26px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: #222222;
+  border: 1px solid #666666;
+  border-radius: 3px;
+
+  color: #f5f5f2;
+}
+
+.energy-graph > .graph-node strong {
+  display: block;
+
+  margin: 10px 0 8px;
+
+  color: #ffffff;
+
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.energy-graph > .graph-node small {
+  display: block;
+
+  color: #d0d0ca;
+
+  font-size: .88rem;
+  line-height: 1.55;
+}
+
+/* Índices */
+
+.energy-graph .node-index {
+  color: #ffc400;
+  font-family: monospace;
+  font-size: .78rem;
+  letter-spacing: .12em;
+}
+
+/* ---------------------------------------------------------
+   Sequência principal
+   --------------------------------------------------------- */
+
+.energy-graph > .source {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.energy-graph > .graph-line:nth-of-type(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.energy-graph > .system {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.energy-graph > .graph-line.restricted {
+  grid-column: 4;
+  grid-row: 1;
+}
+
+.energy-graph > .restriction {
+  grid-column: 5;
+  grid-row: 1;
+}
+
+/* ---------------------------------------------------------
+   Linhas de conexão
+   --------------------------------------------------------- */
+
+.energy-graph > .graph-line {
+  position: relative;
+
+  width: 100%;
+  height: 2px;
+
+  background: #6a6a6a;
+}
+
+.energy-graph > .graph-line span {
+  position: absolute;
+
+  right: 0;
+  top: 50%;
+
+  width: 8px;
+  height: 8px;
+
+  transform: translateY(-50%) rotate(45deg);
+
+  background: #ffc400;
+}
+
+/* Linha da restrição */
+
+.energy-graph > .graph-line.restricted {
+  background: #8b6b00;
+}
+
+/* ---------------------------------------------------------
+   FORK — segunda camada do grafo
+   --------------------------------------------------------- */
+
+.energy-graph > .graph-fork {
+  grid-column: 1 / 6;
+  grid-row: 2;
+
+  position: relative;
+
+  width: 100%;
+  min-width: 0;
+
+  margin-top: 18px;
+  padding-top: 42px;
+
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+/* Tronco vertical */
+
+.energy-graph > .graph-fork::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  width: 2px;
+  height: 42px;
+
+  transform: translateX(-50%);
+
+  background: #ffc400;
+}
+
+/* Barra horizontal de distribuição */
+
+.energy-graph > .graph-fork::after {
+  content: "";
+
+  position: absolute;
+
+  top: 42px;
+  left: 12.5%;
+  right: 12.5%;
+
+  height: 2px;
+
+  background: #666666;
+}
+
+/* ---------------------------------------------------------
+   Destinos
+   --------------------------------------------------------- */
+
+.energy-graph .fork-node {
+  position: relative;
+  z-index: 2;
+
+  min-width: 0;
+  min-height: 145px;
+
+  box-sizing: border-box;
+
+  padding: 26px 22px;
+
+  background: #202020;
+
+  border: 1px solid #555555;
+  border-radius: 3px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.energy-graph .fork-node::before {
+  content: "";
+
+  position: absolute;
+
+  top: -10px;
+  left: 50%;
+
+  width: 10px;
+  height: 10px;
+
+  transform: translateX(-50%);
+
+  border: 2px solid #ffc400;
+  background: #171717;
+
+  border-radius: 50%;
+
+  z-index: 3;
+}
+
+.energy-graph .fork-node > span {
+  color: #ffc400;
+
+  font-family: monospace;
+  font-size: .76rem;
+  letter-spacing: .1em;
+
+  margin-bottom: 10px;
+}
+
+.energy-graph .fork-node strong {
+  color: #ffffff;
+
+  font-size: 1rem;
+  line-height: 1.35;
+
+  margin-bottom: 8px;
+}
+
+.energy-graph .fork-node small {
+  color: #d0d0ca;
+
+  font-size: .84rem;
+  line-height: 1.55;
+}
+
+/* ---------------------------------------------------------
+   TABLET
+   --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+  .energy-graph {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 18px;
+    padding: 28px;
+  }
+
+  .energy-graph > .graph-node,
+  .energy-graph > .graph-line,
+  .energy-graph > .graph-line.restricted {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .energy-graph > .graph-line {
+    width: 2px;
+    height: 30px;
+    margin: 0 auto;
+  }
+
+  .energy-graph > .graph-line span {
+    right: auto;
+    left: 50%;
+    top: auto;
+    bottom: 0;
+    transform: translateX(-50%) rotate(45deg);
+  }
+
+  .energy-graph > .graph-fork {
+    grid-column: 1;
+    grid-row: auto;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    padding-top: 30px;
+  }
+
+  .energy-graph > .graph-fork::before {
+    height: 30px;
+  }
+
+  .energy-graph > .graph-fork::after {
+    display: none;
+  }
+
+}
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 560px) {
+
+  .energy-graph {
+    margin-top: 36px;
+    padding: 20px;
+  }
+
+  .energy-graph > .graph-fork {
+    grid-template-columns: 1fr;
+  }
+
+  .energy-graph .fork-node,
+  .energy-graph > .graph-node {
+    min-height: 125px;
+    padding: 22px;
+  }
+
+}
+
+
+/* Editorial refinement: source sections follow the main prose flow.
+   The outer frame was removed to avoid unnecessary visual confinement. */
+.index-source-section,
+.problema-source-section {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+
+/* Editorial contrast fix:
+   emphasis inside running prose must remain readable.
+   Neon amber is reserved for labels, signals and interface accents,
+   not for semantic emphasis inside body text. */
+
+.prose strong,
+.prose em,
+.editorial-accordion .accordion-content strong,
+.editorial-accordion .accordion-content em,
+.evidence-copy strong,
+.architecture-section .prose strong,
+.methodology-section .prose strong,
+.stakeholders-section .prose strong,
+.sources-section .prose strong {
+  color: #F2F2F2 !important;
+}
+
+
+/* GLOBAL EDITORIAL RULE — SOURCE SECTIONS
+   Provenance, research and source sections follow the main editorial flow.
+   They must never be visually confined by an outer card/frame. */
+
+.sources-section,
+.research-section,
+.provenance-section {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.sources-section .editorial-accordion,
+.research-section .editorial-accordion,
+.provenance-section .editorial-accordion {
+  margin-left: 0;
+  margin-right: 0;
+}
+

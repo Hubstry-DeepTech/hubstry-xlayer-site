@@ -1,0 +1,7 @@
+﻿# Local editorial backups
+*.backup.html
+*.before-*.html
+*.backup.css
+*.before-*.css
+index.v2.html
+_home_snapshot.txt
