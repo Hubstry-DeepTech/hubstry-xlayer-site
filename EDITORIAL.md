@@ -86,3 +86,26 @@ Documentos do ONS, ABDIB, União Europeia e papers da Hubstry devem ser contextu
 A escrita deve ser técnico-expositiva, argumentativa e acessível a leitores não especialistas sem diluir a precisão conceitual.
 
 O objetivo é produzir autoridade por argumentação e evidência, não por densidade visual artificial.
+
+## Edição segura de HTML e Markdown — PowerShell
+
+Para alterações cirúrgicas em arquivos UTF-8, evitar `Set-Content -Encoding UTF8`
+e `Add-Content`: no Windows PowerShell 5.1 a regravação pode introduzir BOM ou
+converter o corpo do arquivo, produzindo diffs de centenas de linhas por mudança
+de codificação.
+
+Padrão adotado — preserva o BOM original, se houver:
+
+```powershell
+$caminho = "caminho\do\arquivo"
+$temBom = ([System.IO.File]::ReadAllBytes($caminho)[0..2] -join ' ') -eq '239 187 191'
+$t = [System.IO.File]::ReadAllText($caminho, [System.Text.Encoding]::UTF8)
+# alteração cirúrgica, com âncora confirmada como única
+[System.IO.File]::WriteAllText($caminho, $t, (New-Object System.Text.UTF8Encoding $temBom))
+```
+
+Para leitura e diagnóstico, usar sempre `Get-Content -Encoding UTF8`: sem o
+parâmetro, o PowerShell 5.1 lê como Latin-1 e exibe mojibake em arquivo íntegro.
+
+Antes de qualquer alteração, confirmar que a âncora ocorre uma única vez. Depois,
+verificar `git diff --stat` e confirmar que somente o bloco pretendido mudou.
