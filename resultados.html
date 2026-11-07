@@ -133,7 +133,9 @@
       A análise mostrou que os episódios de restrição por razão energética
       não aparecem apenas como pulsos isolados. Eles formam blocos
       sistêmicos prolongados, alterando substancialmente o conjunto de
-      destinos que poderia ser considerado viável.
+      destinos que poderia ser considerado viável. A duração desses blocos,
+      porém, está em revalidação: depende da regra usada para identificar
+      corte positivo.
     </p>
 
   </div>
@@ -163,7 +165,7 @@
     <div class="graph-node restriction">
       <span class="node-index">C</span>
       <strong>Blocos sistêmicos</strong>
-      <small>9 a 11,5 horas</small>
+      <small>9 a 11,5 horas · em revalidação</small>
     </div>
 
     <div class="graph-fork">
@@ -171,25 +173,25 @@
       <div class="fork-node">
         <span>95,4%</span>
         <strong>Energia</strong>
-        <small>em episódios ≥ 4 horas</small>
+        <small>em episódios ≥ 4 horas · magnitude reconstruída provisória</small>
       </div>
 
       <div class="fork-node">
         <span>0,2%</span>
         <strong>Pulsos</strong>
-        <small>episódios de 30 minutos</small>
+        <small>episódios de 30 minutos · magnitude reconstruída provisória</small>
       </div>
 
       <div class="fork-node">
         <span>37.185</span>
-        <strong>ENE</strong>
-        <small>origem sistêmica agregada</small>
+        <strong>Ocorrências sistêmicas</strong>
+        <small>origem sistêmica agregada · observação de ocorrência</small>
       </div>
 
       <div class="fork-node">
         <span>4.298</span>
         <strong>Locais</strong>
-        <small>ocorrências agregadas</small>
+        <small>ocorrências agregadas · observação de ocorrência</small>
       </div>
 
     </div>
@@ -213,10 +215,12 @@
     <p>
       O primeiro achado metodológico relevante está na duração. Episódios
       de razão energética formam blocos sistêmicos de aproximadamente
-      9 a 11,5 horas, e mais de 95% da energia cortada por razão energética
-      está concentrada em episódios de quatro horas ou mais. Em contraste,
+      9 a 11,5 horas (duração em revalidação, pois depende da regra usada
+      para identificar corte positivo), e mais de 95% da energia cortada por
+      razão energética (95,4%, magnitude reconstruída provisória) está
+      concentrada em episódios de quatro horas ou mais. Em contraste,
       pulsos de trinta minutos representam apenas uma fração residual da
-      energia observada.
+      energia cortada (0,2%, também magnitude reconstruída provisória).
     </p>
     <p>
       Esses números carregam uma limitação de origem que precisa ser
@@ -231,10 +235,14 @@
     <p>
       A consequência é delimitada. A magnitude agregada do corte permanece
       <strong>provisória</strong> enquanto essa questão não for resolvida. A
-      estrutura temporal, por outro lado, depende de quando e onde houve
-      restrição, não de quanto foi cortado — e por isso sobrevive à
-      pendência. É essa estrutura, e não o volume, que sustenta o resultado
-      apresentado nesta seção.
+      estrutura temporal depende menos de quanto foi cortado e mais de
+      quando e onde houve restrição, mas isso só vale na medida em que a
+      regra usada para identificar corte positivo esteja correta. Por isso,
+      os blocos de 9 a 11,5 horas são <strong>resultado em revalidação</strong>
+      até que essa regra seja testada, e não uma propriedade estabelecida
+      que sobreviva à pendência. O que não depende dessa regra são as
+      contagens de ocorrências por razão e por origem, que são observações
+      dos registros.
     </p>
 
     <p>
@@ -249,9 +257,13 @@
 
     <p>
       O resultado, portanto, não diz que determinado destino é
-      economicamente superior. Ele estabelece uma propriedade do fenômeno
-      observado: <strong>a distribuição temporal do curtailment restringe
+      economicamente superior. Se a duração dos blocos for confirmada na
+      revalidação (ela depende da regra usada para identificar corte
+      positivo), ele indica uma propriedade do fenômeno observado:
+      <strong>a distribuição temporal do curtailment restringe
       o conjunto de tecnologias que faz sentido considerar.</strong>
+      Enquanto a duração estiver em revalidação, essa conclusão é
+      condicional e não deve ser lida como resultado estabelecido.
     </p>
     <p>
       Vale registrar uma convergência de estrutura, não de resultado. O
@@ -268,6 +280,10 @@
       aproximação sugere é que a estrutura temporal do fenômeno — sua
       concentração no período diurno e sua duração prolongada — é uma
       propriedade estável o bastante para aparecer em ambos os recortes.
+      Essa leitura vale apenas se a duração prolongada for confirmada na
+      revalidação, pois a duração dos blocos depende da regra usada para
+      identificar corte positivo; a concentração no período diurno e a
+      duração não têm o mesmo estatuto.
     </p>
 
   </div>
@@ -288,7 +304,8 @@
 
     <p>
       As ocorrências identificadas no recorte distribuem-se entre
-      diferentes razões operacionais. Foram contabilizadas 22.583
+      diferentes razões operacionais. Foram contabilizadas, como observação
+      de ocorrência (contagem de registros, não de energia), 22.583
       ocorrências classificadas como razão energética (ENE), isto é,
       motivadas pela impossibilidade de alocação de geração de energia
       na carga; 14.666 associadas à razão de indisponibilidade externa
@@ -311,7 +328,8 @@
 
     <p>
       Esse foi um dos motivos para a análise separar a origem sistêmica da
-      origem local. O agregado observado contém 37.185 ocorrências de
+      origem local. O agregado observado, também como contagem de
+      ocorrência, contém 37.185 ocorrências de
       natureza sistêmica contra 4.298 locais no recorte analisado. Esses
       números não devem ser interpretados como uma medida universal do
       sistema elétrico brasileiro; são propriedades do recorte utilizado
